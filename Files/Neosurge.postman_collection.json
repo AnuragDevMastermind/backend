@@ -1,0 +1,1818 @@
+{
+	"info": {
+		"_postman_id": "f1c7ef83-c0c2-47a3-b896-84b4be87935b",
+		"name": "Neosurge",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "43705581"
+	},
+	"item": [
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "send otp",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"phoneNumber\": \"987654319\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/sendOtp",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"sendOtp"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"number\": \"1231567890\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create audit log",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"actionType\": \"login\",\n    \"timestamp\": \"2025-04-28T08:00:00Z\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/createAuditLog",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"createAuditLog"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "submit otp",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"otp\": \"708842\", \n    \"user\": {\n        \"name\": \"Ayush Thakur\",\n        \"number\": \"1231567890\",\n        \"password\": \"neosurge123@A\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/submitOtp",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"submitOtp"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"number\": \"1231567890\",\n    \"password\": \"neosurge123@A\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Logout",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/logout",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "expense",
+			"item": [
+				{
+					"name": "create expense",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"amount\": 45.50,\r\n  \"category\": \"Meals\",\r\n  \"date\": \"2025-04-27T13:15:00Z\",\r\n  \"tags\": [\"uber\", \"train\", \"coffee\"],\r\n  \"notes\": \"Lunch with client at downtown cafe\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/createNewExpense",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"createNewExpense"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "create expense",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"amount\": 45.50,\r\n  \"category\": \"Meals\",\r\n  \"date\": \"2025-04-27T13:15:00Z\",\r\n  \"tags\": [\"lunch\", \"client meeting\"],\r\n  \"notes\": \"Lunch with client at downtown cafe\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/createNewExpense",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"createNewExpense"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://127.0.0.1:3000"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "308"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"134-3hq+CKqcmxMOKJbEo5bOFDybCWM\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 28 Apr 2025 11:54:48 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Expense created successfully\",\n    \"data\": {\n        \"amount\": 45.5,\n        \"category\": \"Meals\",\n        \"date\": \"2025-04-27T13:15:00.000Z\",\n        \"tags\": [\n            \"lunch\",\n            \"client meeting\"\n        ],\n        \"notes\": \"Lunch with client at downtown cafe\",\n        \"_id\": \"680f6c882e36fad6ef380632\",\n        \"createdAt\": \"2025-04-28T11:54:48.484Z\",\n        \"updatedAt\": \"2025-04-28T11:54:48.484Z\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "update expense",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"expense\": {\r\n    \"_id\": \"680f652955670e67949a3660\", \r\n    \"amount\": 75.00,\r\n    \"category\": \"Transportation\",\r\n    \"date\": \"2025-04-28T10:00:00Z\",\r\n    \"tags\": [\"uber\", \"meeting\"],\r\n    \"notes\": \"Business trip taxi ride\"\r\n  }\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/updateExpense",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"updateExpense"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "update expense",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"expense\": {\r\n    \"_id\": \"680f652955670e67949a3660\", \r\n    \"amount\": 75.00,\r\n    \"category\": \"Transportation\",\r\n    \"date\": \"2025-04-28T10:00:00Z\",\r\n    \"tags\": [\"uber\", \"meeting\"],\r\n    \"notes\": \"Business trip taxi ride\"\r\n  }\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/updateExpense",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"updateExpense"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://127.0.0.1:3000"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "296"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"128-VE2ZUJMm0c4rSMdRt2JKJ0VTSn4\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 28 Apr 2025 12:03:59 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Expense updated successfully\",\n    \"data\": {\n        \"_id\": \"680f652955670e67949a3660\",\n        \"amount\": 75,\n        \"category\": \"Transportation\",\n        \"date\": \"2025-04-28T10:00:00.000Z\",\n        \"tags\": [\n            \"uber\",\n            \"meeting\"\n        ],\n        \"notes\": \"Business trip taxi ride\",\n        \"createdAt\": \"2025-04-28T11:23:21.162Z\",\n        \"updatedAt\": \"2025-04-28T12:03:59.629Z\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "delete expense",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"expense\": {\r\n    \"_id\": \"680f6c882e36fad6ef380632\"\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/deleteExpense",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"deleteExpense"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "delete expense",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"expense\": {\r\n    \"_id\": \"680f6c882e36fad6ef380632\"\r\n  }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/deleteExpense",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"deleteExpense"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://127.0.0.1:3000"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "308"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"134-FeL9kK/JLseOEssLVAYULZZqV3g\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 28 Apr 2025 12:22:47 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Expense deleted successfully\",\n    \"data\": {\n        \"_id\": \"680f6c882e36fad6ef380632\",\n        \"amount\": 45.5,\n        \"category\": \"Meals\",\n        \"date\": \"2025-04-27T13:15:00.000Z\",\n        \"tags\": [\n            \"lunch\",\n            \"client meeting\"\n        ],\n        \"notes\": \"Lunch with client at downtown cafe\",\n        \"createdAt\": \"2025-04-28T11:54:48.484Z\",\n        \"updatedAt\": \"2025-04-28T11:54:48.484Z\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "getAll expense",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/getAllExpense",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"getAllExpense"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "getAll expense",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"expense\": {\r\n    \"_id\": \"680f652955670e67949a9620\"\r\n  }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/getAllExpense",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"getAllExpense"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://127.0.0.1:3000"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "857"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"359-lpgr48lWU2MO+sN2Y0LzIic+eds\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 28 Apr 2025 13:02:57 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Expenses fetched successfully\",\n    \"data\": [\n        {\n            \"_id\": \"680f652955670e67949a3660\",\n            \"amount\": 75,\n            \"category\": \"Transportation\",\n            \"date\": \"2025-04-28T10:00:00.000Z\",\n            \"tags\": [\n                \"uber\",\n                \"meeting\"\n            ],\n            \"notes\": \"Business trip taxi ride\",\n            \"createdAt\": \"2025-04-28T11:23:21.162Z\",\n            \"updatedAt\": \"2025-04-28T12:03:59.629Z\"\n        },\n        {\n            \"_id\": \"680f671b1840f49cb261110f\",\n            \"amount\": 120,\n            \"category\": \"Transportation\",\n            \"date\": \"2025-04-27T09:30:00.000Z\",\n            \"tags\": [\n                \"uber\",\n                \"business trip\"\n            ],\n            \"notes\": \"Airport ride to conference venue\",\n            \"createdAt\": \"2025-04-28T11:31:39.595Z\",\n            \"updatedAt\": \"2025-04-28T11:31:39.595Z\"\n        },\n        {\n            \"_id\": \"680f745068e6997160a37593\",\n            \"userId\": \"680f652955670e67949a9620\",\n            \"amount\": 45.5,\n            \"category\": \"Meals\",\n            \"date\": \"2025-04-27T13:15:00.000Z\",\n            \"tags\": [\n                \"lunch\",\n                \"client meeting\"\n            ],\n            \"notes\": \"Lunch with client at downtown cafe\",\n            \"createdAt\": \"2025-04-28T12:28:00.187Z\",\n            \"updatedAt\": \"2025-04-28T12:28:00.187Z\"\n        }\n    ]\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Budget",
+			"item": [
+				{
+					"name": "create budget",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"category\": \"Food\",\r\n  \"price\": 500,\r\n  \"month\": 4,  // April\r\n  \"year\": 2025\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/createNewBudget",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"createNewBudget"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "create budget",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"userId\": \"60c72b2f5f1b2c001f1b2c3a\",  // MongoDB ObjectId of the user\r\n  \"category\": \"Food\",\r\n  \"price\": 500,\r\n  \"month\": 4,  // April\r\n  \"year\": 2025\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/createNewBudget",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"createNewBudget"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://127.0.0.1:3000"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "249"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"f9-rpIEFP/gSobcZ9GJuOv+7rPSDVw\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 28 Apr 2025 13:57:07 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Budget created successfully\",\n    \"data\": {\n        \"userId\": \"60c72b2f5f1b2c001f1b2c3a\",\n        \"category\": \"Food\",\n        \"price\": 500,\n        \"month\": 4,\n        \"year\": 2025,\n        \"_id\": \"680f8933a158927a3428a319\",\n        \"createdAt\": \"2025-04-28T13:57:07.806Z\",\n        \"updatedAt\": \"2025-04-28T13:57:07.806Z\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "update budget",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"budget\":{\r\n    \"_id\": \"680f8933a158927a3428a319\",\r\n    \"userId\": \"60c72b2f5f1b2c001f1b2c3a\",\r\n    \"category\": \"Entertainment\",\r\n    \"price\": 300,\r\n    \"month\": 5,\r\n    \"year\": 2025\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/updateBudget",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"updateBudget"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "update budget",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"budget\":{\r\n    \"_id\": \"680f8933a158927a3428a319\",\r\n    \"userId\": \"60c72b2f5f1b2c001f1b2c3a\",\r\n    \"category\": \"Entertainment\",\r\n    \"price\": 300,\r\n    \"month\": 5,\r\n    \"year\": 2025\r\n  }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/updateBudget",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"updateBudget"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://127.0.0.1:3000"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "258"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"102-wERaX9lb6bcYe5Kd61I4sqB4WHo\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 28 Apr 2025 14:07:59 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Budget updated successfully\",\n    \"data\": {\n        \"_id\": \"680f8933a158927a3428a319\",\n        \"userId\": \"60c72b2f5f1b2c001f1b2c3a\",\n        \"category\": \"Entertainment\",\n        \"price\": 300,\n        \"month\": 5,\n        \"year\": 2025,\n        \"createdAt\": \"2025-04-28T13:57:07.806Z\",\n        \"updatedAt\": \"2025-04-28T14:07:59.203Z\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "delete budget",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"budget\": {\r\n    \"_id\": \"680f8933a158927a3428a319\"\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/deleteBudget",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"deleteBudget"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "delete budget",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"budget\": {\r\n    \"_id\": \"680f8933a158927a3428a319\"\r\n  }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/deleteBudget",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"deleteBudget"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://127.0.0.1:3000"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "258"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"102-ESBzAsCHsOsl7UCVi9fVUBy4mr0\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 28 Apr 2025 14:09:34 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Budget deleted successfully\",\n    \"data\": {\n        \"_id\": \"680f8933a158927a3428a319\",\n        \"userId\": \"60c72b2f5f1b2c001f1b2c3a\",\n        \"category\": \"Entertainment\",\n        \"price\": 300,\n        \"month\": 5,\n        \"year\": 2025,\n        \"createdAt\": \"2025-04-28T13:57:07.806Z\",\n        \"updatedAt\": \"2025-04-28T14:07:59.203Z\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "getAll budget",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/getAllBudget",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"getAllBudget"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "getAll budget",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"budget\": {\r\n    \"_id\": \"680f652955670e67949a9620\"\r\n  }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/getAllBudget",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"getAllBudget"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://127.0.0.1:3000"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1068"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"42c-fU6VR0fQvRCn6GoBeWihx+zbKhI\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 28 Apr 2025 14:13:03 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Budgets fetched successfully\",\n    \"data\": [\n        {\n            \"_id\": \"680f8c72dbf5644c8b88413f\",\n            \"userId\": \"60c72b2f5f1b2c001f1b2c3a\",\n            \"category\": \"Food\",\n            \"price\": 500,\n            \"month\": 4,\n            \"year\": 2025,\n            \"createdAt\": \"2025-04-28T14:10:58.255Z\",\n            \"updatedAt\": \"2025-04-28T14:10:58.255Z\"\n        },\n        {\n            \"_id\": \"680f8c78dbf5644c8b884141\",\n            \"userId\": \"60c72b2f5f1b2c001f1b2c3b\",\n            \"category\": \"Electronics\",\n            \"price\": 1500,\n            \"month\": 5,\n            \"year\": 2025,\n            \"createdAt\": \"2025-04-28T14:11:04.936Z\",\n            \"updatedAt\": \"2025-04-28T14:11:04.936Z\"\n        },\n        {\n            \"_id\": \"680f8c80dbf5644c8b884143\",\n            \"userId\": \"60c72b2f5f1b2c001f1b2c3c\",\n            \"category\": \"Clothing\",\n            \"price\": 200,\n            \"month\": 6,\n            \"year\": 2025,\n            \"createdAt\": \"2025-04-28T14:11:12.261Z\",\n            \"updatedAt\": \"2025-04-28T14:11:12.261Z\"\n        },\n        {\n            \"_id\": \"680f8c8bdbf5644c8b884145\",\n            \"userId\": \"60c72b2f5f1b2c001f1b2c3d\",\n            \"category\": \"Books\",\n            \"price\": 50,\n            \"month\": 7,\n            \"year\": 2025,\n            \"createdAt\": \"2025-04-28T14:11:23.748Z\",\n            \"updatedAt\": \"2025-04-28T14:11:23.748Z\"\n        },\n        {\n            \"_id\": \"680f8c90dbf5644c8b884147\",\n            \"userId\": \"60c72b2f5f1b2c001f1b2c3e\",\n            \"category\": \"Toys\",\n            \"price\": 100,\n            \"month\": 8,\n            \"year\": 2025,\n            \"createdAt\": \"2025-04-28T14:11:28.126Z\",\n            \"updatedAt\": \"2025-04-28T14:11:28.126Z\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "getBudgetExpenseBreakdown",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"month\": 4,\n    \"year\": 2025\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/getBudgetExpenseBreakdown",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"getBudgetExpenseBreakdown"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "getBudgetExpenseBreakdown",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"userId\": \"680fb59c0b93b611b870afe2\",\n    \"month\": 4,\n    \"year\": 2025\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/getBudgetExpenseBreakdown",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"getBudgetExpenseBreakdown"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://127.0.0.1:3000"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "264"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"108-4buXCWTMMTQW2RTYqNoHPuKxWLk\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 29 Apr 2025 01:37:54 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Budget expense breakdown fetched successfully.\",\n    \"data\": {\n        \"budgetExpenseBreakdown\": [\n            {\n                \"category\": \"Food\",\n                \"month\": 4,\n                \"year\": 2025,\n                \"budgetedAmount\": 500,\n                \"expenseAmount\": 350\n            },\n            {\n                \"category\": \"Travel\",\n                \"month\": 4,\n                \"year\": 2025,\n                \"budgetedAmount\": 300,\n                \"expenseAmount\": 100\n            }\n        ]\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "HeuristicCategory",
+			"item": [
+				{
+					"name": "create heuristicCategory",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Food\",\r\n  \"keywords\": [\"uber\", \"train\", \"coffee\"]\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/createNewHeuristicCategory",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"createNewHeuristicCategory"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "create heuristicCategory",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"name\": \"Food\",\r\n  \"keywords\": [\"restaurant\", \"grocery\", \"dining\"]\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/createNewHeuristicCategory",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"createNewHeuristicCategory"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://127.0.0.1:3000"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "162"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"a2-Nyr5As7iIFDoFVmmqDcnJM9Tt1w\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 28 Apr 2025 18:50:51 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Heuristic category created successfully\",\n    \"data\": {\n        \"name\": \"Food\",\n        \"keywords\": [\n            \"restaurant\",\n            \"grocery\",\n            \"dining\"\n        ],\n        \"_id\": \"680fce0be2799309d3bcc674\",\n        \"__v\": 0\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "update heuristicCategory",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"category\": {\r\n    \"_id\": \"680fce0be2799309d3bcc674\", \r\n    \"name\": \"Food and Beverages\",\r\n    \"keywords\": [\"restaurant\", \"grocery\", \"coffee\", \"snacks\"]\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/updateHeuristicCategory",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"updateHeuristicCategory"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "update heuristicCategory",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"category\": {\r\n    \"_id\": \"680fce0be2799309d3bcc674\", \r\n    \"name\": \"Food and Beverages\",\r\n    \"keywords\": [\"restaurant\", \"grocery\", \"coffee\", \"snacks\"]\r\n  }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/updateHeuristicCategory",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"updateHeuristicCategory"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://127.0.0.1:3000"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "185"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"b9-Rb+I5Uxdfz3W9KLFD0bd0sAlVng\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 28 Apr 2025 18:54:02 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Heuristic category updated successfully\",\n    \"data\": {\n        \"_id\": \"680fce0be2799309d3bcc674\",\n        \"name\": \"Food and Beverages\",\n        \"keywords\": [\n            \"restaurant\",\n            \"grocery\",\n            \"coffee\",\n            \"snacks\"\n        ],\n        \"__v\": 0\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "delete heuristicCategory",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"category\": {\r\n    \"_id\": \"680fce0be2799309d3bcc674\"\r\n  }\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/deleteHeuristicCategory",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"deleteHeuristicCategory"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "delete heuristicCategory",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"category\": {\r\n    \"_id\": \"680fce0be2799309d3bcc674\"\r\n  }\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/deleteHeuristicCategory",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"deleteHeuristicCategory"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://127.0.0.1:3000"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "185"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"b9-bJDcwgZSUg8EKngwso6wsqYc/I8\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 28 Apr 2025 18:57:53 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Heuristic category deleted successfully\",\n    \"data\": {\n        \"_id\": \"680fce0be2799309d3bcc674\",\n        \"name\": \"Food and Beverages\",\n        \"keywords\": [\n            \"restaurant\",\n            \"grocery\",\n            \"coffee\",\n            \"snacks\"\n        ],\n        \"__v\": 0\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "getAll heuristicCategory",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/getAllHeuristicCategory",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"getAllHeuristicCategory"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "getAll heuristicCategory",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"category\": {\r\n    \"_id\": \"optional-id-if-needed\" \r\n  }\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/getAllHeuristicCategory",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"getAllHeuristicCategory"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://127.0.0.1:3000"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "189"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"bd-pmA+4hK7zTpywhWgKvS9hC+06NE\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 28 Apr 2025 18:56:21 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Heuristic categories fetched successfully\",\n    \"data\": [\n        {\n            \"_id\": \"680fce0be2799309d3bcc674\",\n            \"name\": \"Food and Beverages\",\n            \"keywords\": [\n                \"restaurant\",\n                \"grocery\",\n                \"coffee\",\n                \"snacks\"\n            ],\n            \"__v\": 0\n        }\n    ]\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "ScoreGenerator",
+			"item": [
+				{
+					"name": "getFinalScore",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"userId\": \"680fb59c0b93b611b870afe2\",\n    \"month\": 4,\n    \"year\": 2025\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/getFinalScore",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"getFinalScore"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "getFinalScore",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"userId\": \"680fb59c0b93b611b870afe2\",\n    \"month\": 4,\n    \"year\": 2025\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/getBudgetAdherence",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"getBudgetAdherence"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://127.0.0.1:3000"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "118"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"76-eOGBED5LysgwBF+eQ2BWW0Ram1A\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 29 Apr 2025 04:52:13 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"score fetched successfully.\",\n    \"adherence\": 75,\n    \"frequency\": 3.4482758620689653,\n    \"finalScore\": 23.53448275862069\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "cron",
+			"item": [
+				{
+					"name": "Start Notification",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"cron\": \"0 12 * * *\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/cron/startNotification",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"cron",
+								"startNotification"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"cron\": \"0 12 * * *\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/cron/startNotification",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"cron",
+										"startNotification"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://127.0.0.1:3000"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "41"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"29-sah8um78r0b5CnTEYXLafKsYgfM\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 29 Apr 2025 06:27:58 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Email reminder job started.\"\n}"
+						}
+					]
+				},
+				{
+					"name": "stopNotification",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/cron/stopNotification",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"cron",
+								"stopNotification"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
