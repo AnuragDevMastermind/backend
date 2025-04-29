@@ -84,3 +84,7 @@ npm i
 ```
 npm run dev
 ```
+
+## Folder structure & design notes
+- [folder_structure.md](folder_structure.md)
+- [design_notes.md](design_notes.md)
